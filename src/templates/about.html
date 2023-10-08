@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1> About Page</h1>
+{{request.user}}
+
+{{my_html|safe|title}}
+
+<p>This is a template</p>
+
+<p>
+	{{ my_text }}, {{ my_number }}
+</p>
+
+<ul>
+{% for my_sub_item in my_list %}
+	{% if my_sub_item == "item2" %}
+		<li> {{my_sub_item | capfirst}} </li>
+	{% elif my_sub_item == "item3" %}
+		<li> This is not item 3</li>
+	{% else %}
+		<li> {{ forloop.counter }} - {{my_sub_item}} </li>
+	{% endif %}
+{% endfor %}
+</ul>
+
+{%endblock%}
