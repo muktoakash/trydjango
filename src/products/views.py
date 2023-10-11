@@ -1,6 +1,15 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from .models import Product
 
 # Create your views here.
-def home_view(*args, **kwargs):
-	return HttpResponse("<h1>Hello World</h1>") # string of HTML code
+def product_detail_view(request):
+	obj = Product.objects.get(id=1)
+	# context={
+	# 	'title': obj.title,
+	# 	'description': obj.description
+	# }
+	context = {
+	'object' : obj
+	}
+	return render(request, "product/detail.html", context)
