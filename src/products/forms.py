@@ -27,7 +27,7 @@ class ProductForm(forms.ModelForm):
 			raise forms.ValidationError("This is not a valid title")
 		return title
 
-class RawProductFrom(forms.Form):
+class RawProductForm(forms.Form):
 	title = forms.CharField(label='', 
 		widget=forms.TextInput(attrs={"placeholder": "Your title"}))
 	description = forms.CharField(required=False,
