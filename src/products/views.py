@@ -33,7 +33,7 @@ def product_create_view(request):
 	return render(request, "products/product_create.html", context)
 
 def product_detail_view(request):
-	obj = Product.objects.get(id=1)
+	obj = Product.objects.get(id=4)
 	# context={
 	# 	'title': obj.title,
 	# 	'description': obj.description
@@ -85,3 +85,10 @@ def product_delete_view(request, id):
 
 	}
 	return render(request, "products/product_delete.html", context)
+
+def product_list_view(request):
+	queryset = Product.objects.all() # list of objects
+	context = {
+		"object_list": queryset
+	}
+	return render(request, "products/product_list.html", context)
