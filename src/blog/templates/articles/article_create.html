@@ -1,0 +1,17 @@
+<!-- blog/templates/blog/article_create.html -->
+
+{% extends 'base.html' %}
+
+{%block content%}
+<!-- <form method = 'POST'> {% csrf_token %}
+	{{ form.as_p}}
+	<input type="submit" value="Save"/> -->
+<!-- </form> -->
+
+<form action='.' method='POST'> {% csrf_token %}
+	<!-- <input type="text" name="title" placeholder="Your title"/> -->
+	{{ form.as_p }}
+	<input type="submit", value="Save"/>
+</form>
+{%endblock%}
+
